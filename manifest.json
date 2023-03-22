@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "CopyCleanUrlAndTitle",
+  "version": "1.0",
+  "description": "Copy the title and URL of the current website to the clipboard.",
+  "icons": {
+    "128": "images/Icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CopyCleanUrlAndTitle"
+  }
+}
