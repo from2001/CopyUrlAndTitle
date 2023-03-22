@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     copyButton.addEventListener("click", function() {
-        var clipboardData = UrlAndTitleTextDiv.innerText;
+        var clipboardData = title + "\n" + url; 
         navigator.clipboard.writeText(clipboardData);
 
         copyButton.innerText = "Copied";
