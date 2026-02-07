@@ -69,19 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return out;
   }
 
-  function fallbackCopy(text) {
-    var ta = document.createElement("textarea");
-    ta.value = text;
-    ta.setAttribute("readonly", "");
-    ta.style.position = "fixed";
-    ta.style.top = "-9999px";
-    document.body.appendChild(ta);
-    ta.select();
-    ta.setSelectionRange(0, ta.value.length);
-    document.execCommand("copy");
-    document.body.removeChild(ta);
-  }
-
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     var rawUrl = tabs[0].url;
     var rawTitle = tabs[0].title;
@@ -96,19 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   copyButton.addEventListener("click", function () {
     var clipboardData = title + "\n" + url;
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard
-        .writeText(clipboardData)
-        .then(function () {
-          copyButton.innerText = "Copied";
-        })
-        .catch(function () {
-          fallbackCopy(clipboardData);
-          copyButton.innerText = "Copied";
-        });
-    } else {
-      fallbackCopy(clipboardData);
+    navigator.clipboard.writeText(clipboardData).then(function () {
       copyButton.innerText = "Copied";
-    }
+    });
   });
 });
