@@ -4,10 +4,9 @@
   "version": "1.0",
   "description": "Copy the title and URL of the current website to the clipboard.",
   "icons": {
+    "16": "images/Icon16.png",
+    "48": "images/Icon48.png",
     "128": "images/Icon128.png"
-  },
-  "background": {
-    "service_worker": "background.js"
   },
   "permissions": [
     "activeTab"
