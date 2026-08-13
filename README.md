@@ -2,6 +2,8 @@
 
 A Chrome extension that copies the current page's title and URL to the clipboard with automatic cleaning and sanitization.
 
+![Copy Clean URL And Title extension preview](store-assets/screenshot-1280x800.png)
+
 ## Features
 
 - **One-click copy** -- Copies the page title and cleaned URL to the clipboard in `title\nurl` format
