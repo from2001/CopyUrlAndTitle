@@ -1,4 +1,4 @@
-# CopyCleanUrlAndTitle
+# Copy Clean URL And Title
 
 A Chrome extension that copies the current page's title and URL to the clipboard with automatic cleaning and sanitization.
 
