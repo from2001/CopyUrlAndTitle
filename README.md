@@ -21,8 +21,31 @@ A Chrome extension that copies the current page's title and URL to the clipboard
 
 1. Navigate to any webpage
 2. Click the extension icon in the toolbar
-3. The popup displays the cleaned title and URL
-4. Click **Copy to Clipboard** to copy them
+3. The popup displays the sanitized title and processed URL
+4. When the URL has been changed, a **Cleaned** badge appears next to the URL label
+5. Click **Copy to Clipboard** to copy them
+
+## URL Cleaning
+
+Before copying, the extension processes the current page URL as follows:
+
+- Removes tracking parameters named `fbclid` or beginning with `utm_`, while preserving unrelated query parameters
+- Removes URL hash fragments such as `#section`
+- Converts recognized Amazon product links to the canonical `https://<amazon-domain>/dp/<ASIN>` format
+
+For example:
+
+```text
+https://example.com/article?id=42&utm_source=newsletter#comments
+```
+
+becomes:
+
+```text
+https://example.com/article?id=42
+```
+
+The **Cleaned** badge is shown only when the processed URL differs from the original URL.
 
 ## Permissions
 
@@ -30,4 +53,4 @@ A Chrome extension that copies the current page's title and URL to the clipboard
 
 ## License
 
-[MIT](LICENSE) -- Copyright (c) 2023 Masahiro Yamaguchi
+[MIT](LICENSE) -- Copyright (c) 2026 Masahiro Yamaguchi
