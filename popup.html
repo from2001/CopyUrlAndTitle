@@ -1,22 +1,62 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>CopyCleanUrlAndTitle</title>
-    <script src="popup.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Copy URL &amp; Title</title>
     <link rel="stylesheet" href="css.css">
+    <script src="popup.js" defer></script>
   </head>
   <body>
+    <main class="popup-shell">
+      <header class="app-header">
+        <img class="extension-icon" src="images/Icon128.png" alt="">
+        <div class="brand-copy">
+          <p class="eyebrow">READY TO SHARE</p>
+          <h1>Copy URL &amp; Title</h1>
+        </div>
+        <span class="status-dot" title="Current tab detected" aria-label="Current tab detected"></span>
+      </header>
 
-  <div>
-    <img src="images/1x1.png" height="1" width="220">
-  </div>
+      <section class="preview-card" aria-label="Cleaned page details">
+        <div class="field-group">
+          <p class="field-label">TITLE</p>
+          <p id="page-title" class="field-value title-value">Loading current page…</p>
+        </div>
 
-  <div style="text-align: right;">
-      <button id="copy-button">Copy to Clipboard</button>
-  </div>
+        <div class="divider"></div>
 
-  <p>
-    <div id="UrlAndTitleTextDiv"></div>
-  </p>
+        <div class="field-group">
+          <div class="field-heading">
+            <p class="field-label">URL</p>
+            <span id="clean-badge" class="clean-badge" hidden>
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="m3.5 8.25 2.75 2.75 6.25-6.25" />
+              </svg>
+              Cleaned
+            </span>
+          </div>
+          <p id="page-url" class="field-value url-value">Please wait</p>
+        </div>
+      </section>
+
+      <button id="copy-button" class="copy-button" type="button" disabled>
+        <span class="button-icon" aria-hidden="true">
+          <svg class="copy-icon" viewBox="0 0 24 24">
+            <path d="M8.75 7.25V6A2.75 2.75 0 0 1 11.5 3.25H18A2.75 2.75 0 0 1 20.75 6v6.5A2.75 2.75 0 0 1 18 15.25h-1.25" />
+            <rect x="3.25" y="8.75" width="12" height="12" rx="2.75" />
+          </svg>
+          <svg class="check-icon" viewBox="0 0 24 24">
+            <path d="m5 12.5 4.25 4.25L19 7" />
+          </svg>
+        </span>
+        <span class="button-label">Copy to clipboard</span>
+        <span class="shortcut" aria-hidden="true">⌘ C</span>
+      </button>
+
+      <p id="status-message" class="status-message" role="status" aria-live="polite">
+        Tracking parameters are removed automatically
+      </p>
+    </main>
   </body>
 </html>
