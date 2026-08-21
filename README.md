@@ -14,10 +14,18 @@ A Chrome extension that copies the current page's title and URL to the clipboard
 
 ## Installation
 
-1. Clone or download this repository
-2. Open `chrome://extensions/` in Chrome
-3. Enable **Developer mode**
-4. Click **Load unpacked** and select the project directory
+### Install from the Chrome Web Store (Recommended)
+
+1. Open [Copy Clean URL And Title in the Chrome Web Store](https://chromewebstore.google.com/detail/copy-clean-url-and-title/ffalcgkhcnaggflhbegaonflfnomgbjh)
+2. Click **Add to Chrome**
+
+### Install Manually from GitHub
+
+1. [Download this repository](https://github.com/from2001/CopyUrlAndTitle/archive/refs/heads/main.zip) as a ZIP file, or clone it with Git
+2. If you downloaded the ZIP file, extract it
+3. Open `chrome://extensions/` in Chrome
+4. Enable **Developer mode**
+5. Click **Load unpacked** and select the extracted or cloned project directory
 
 ## Usage
 
